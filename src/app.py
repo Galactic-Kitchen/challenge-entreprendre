@@ -33,7 +33,6 @@ def rag_query():
     if not app.config.get("MISTRAL_API_KEY"):
         return jsonify({"error": "MISTRAL_API_KEY is missing from the environment config."}), 500
 
-    return jsonify({"answer": "This is a placeholder response. The RAG query processing logic is not implemented yet.", "sources": "tata toto titi tutu"})
     try:
         Settings.llm = MistralAI(
             model=app.config.get("MISTRAL_MODEL", "mistral-small-latest"),
@@ -68,14 +67,25 @@ def rag_query():
             f"Context:\n{context}\n\nQuestion:\n{question}"
         )
 
-        sources = [
-            {
-                "score": getattr(node, "score", None),
-                "id": getattr(node.node, "node_id", None),
-                "text": node.node.get_content() if hasattr(node.node, "get_content") else str(node.node),
-            }
-            for node in nodes
-        ]
+        sources = []
+        for node in nodes:
+            metadata = getattr(node.node, "metadata", None)
+            if metadata is None and hasattr(node, "metadata"):
+                metadata = getattr(node, "metadata")
+
+            if isinstance(metadata, dict):
+                source_payload = dict(metadata)
+            else:
+                source_payload = {}
+
+            text = node.node.get_content() if hasattr(node.node, "get_content") else str(node.node)
+            if text:
+                source_payload["text"] = text
+
+            if hasattr(node, "score"):
+                source_payload["score"] = getattr(node, "score")
+
+            sources.append(source_payload)
 
         return jsonify({"answer": str(response), "sources": sources})
     except Exception as exc:  # pragma: no cover
