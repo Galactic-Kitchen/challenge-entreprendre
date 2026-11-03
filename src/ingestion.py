@@ -1,10 +1,15 @@
-import os
+import logging
+from typing import Any, Dict, List
+
 import chromadb
-from llama_index.core import Document, StorageContext, VectorStoreIndex, Settings
+from llama_index.core import Document, Settings, StorageContext, VectorStoreIndex
 from llama_index.core.node_parser import SentenceSplitter
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.vector_stores.chroma import ChromaVectorStore
-from typing import List, Dict, Any
+
+from config import Config
+
+logger = logging.getLogger(__name__)
 
 
 def initialiser_et_rempli_chromadb(donnees_brutes_git: List[Dict[str, Any]]) -> VectorStoreIndex:
@@ -21,11 +26,11 @@ def initialiser_et_rempli_chromadb(donnees_brutes_git: List[Dict[str, Any]]) -> 
     Returns:
         VectorStoreIndex: L'index LlamaIndex connecté à ChromaDB prêt à être interrogé.
     """ 
-    print("1. configuration du modele d'embeding local ...")
+    logger.info("1. configuration du modele d'embeding local ...")
     Settings.embed_model = HuggingFaceEmbedding(
         model_name="BAAI/bge-small-en-v1.5"
     )
-    print("2. Transformation des données brutes en objets Document LlamaIndex...")
+    logger.info("2. Transformation des données brutes en objets Document LlamaIndex...")
     documents = []
     for item in donnees_brutes_git:
         # On crée un objet Document avec le contenu et les métadonnées indispensables
@@ -38,25 +43,20 @@ def initialiser_et_rempli_chromadb(donnees_brutes_git: List[Dict[str, Any]]) -> 
             }
         )
         documents.append(doc)
-    print("3. Chunking (Découpage des documents en morceaux)...")
+    logger.info("3. Chunking (Découpage des documents en morceaux)...")
     # Découpage par tranche de 500 caractères avec 50 caractères de recouvrement
     splitter = SentenceSplitter(chunk_size=500, chunk_overlap=50)
     nodes = splitter.get_nodes_from_documents(documents)
-    print(f"   -> {len(documents)} documents découpés en {len(nodes)} chunks (nodes).")
+    logger.info("   -> %s documents découpés en %s chunks (nodes).", len(documents), len(nodes))
 
-    print("4. Connexion et stockage dans ChromaDB...")
-    # Connexion au serveur ChromaDB (ou stockage local persistant)
-    
-    client = chromadb.HttpClient(host="localhost", port=8000)
-    
-    # Création ou récupération de la collection
-    chroma_collection = client.get_or_create_collection("projets_entreprise")
-    
-    # Association de ChromaDB à LlamaIndex
+    logger.info("4. Connexion et stockage dans ChromaDB...")
+    client = chromadb.HttpClient(host=Config.CHROMA_HOST, port=Config.CHROMA_PORT)
+    chroma_collection = client.get_or_create_collection(Config.CHROMA_COLLECTION)
+
     vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
     storage_context = StorageContext.from_defaults(vector_store=vector_store)
 
-    print("5. Calcul des embeddings et enregistrement des vecteurs...")
+    logger.info("5. Calcul des embeddings et enregistrement des vecteurs...")
     # Cette étape calcule les vecteurs pour chaque chunk et les insère dans ChromaDB
     index = VectorStoreIndex(
         nodes,
@@ -64,5 +64,5 @@ def initialiser_et_rempli_chromadb(donnees_brutes_git: List[Dict[str, Any]]) -> 
         show_progress=True
     )
 
-    print(" ✅ Ingestion terminée avec succès ! La base ChromaDB est remplie.")
+    logger.info("✅ Ingestion terminée avec succès ! La base ChromaDB est remplie.")
     return index

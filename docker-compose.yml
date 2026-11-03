@@ -8,16 +8,18 @@ services:
       - .:/app
     env_file:
       - .env
-    environment:
-      FLASK_ENV: development
-      CHROMA_HOST: chromadb
-      CHROMA_PORT: "8000"
-      CHROMA_COLLECTION: documents
-      MISTRAL_MODEL: mistral-small-latest
-      TOP_K: "4"
     depends_on:
       - chromadb
-    command: python wsgi.py
+    command: python src/app.py
+
+  ingestor:
+    build: .
+    container_name: challenge-ingestor
+    env_file:
+      - .env
+    depends_on:
+      - chromadb
+    command: python src/ingestor_command.py
 
   chromadb:
     image: chromadb/chroma:latest
