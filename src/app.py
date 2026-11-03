@@ -9,7 +9,7 @@ from llama_index.core.retrievers import VectorIndexRetriever
 from llama_index.llms.mistralai import MistralAI
 from llama_index.vector_stores.chroma import ChromaVectorStore
 
-from src.config import Config
+from config import Config
 
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
@@ -33,6 +33,7 @@ def rag_query():
     if not app.config.get("MISTRAL_API_KEY"):
         return jsonify({"error": "MISTRAL_API_KEY is missing from the environment config."}), 500
 
+    return jsonify({"answer": "This is a placeholder response. The RAG query processing logic is not implemented yet.", "sources": "tata toto titi tutu"})
     try:
         Settings.llm = MistralAI(
             model=app.config.get("MISTRAL_MODEL", "mistral-small-latest"),
@@ -79,3 +80,7 @@ def rag_query():
         return jsonify({"answer": str(response), "sources": sources})
     except Exception as exc:  # pragma: no cover
         return jsonify({"error": str(exc)}), 500
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
