@@ -1,0 +1,6 @@
+Flask==3.0.3
+llama-index
+llama-index-vector-stores-chroma
+llama-index-llms-mistralai
+mistralai
+python-dotenv

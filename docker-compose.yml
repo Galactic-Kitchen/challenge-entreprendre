@@ -1,0 +1,34 @@
+services:
+  web:
+    build: .
+    container_name: challenge-flask-app
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    environment:
+      FLASK_ENV: development
+      CHROMA_HOST: chromadb
+      CHROMA_PORT: "8000"
+      CHROMA_COLLECTION: documents
+      MISTRAL_MODEL: mistral-small-latest
+      TOP_K: "4"
+    depends_on:
+      - chromadb
+    command: python wsgi.py
+
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: challenge-chromadb
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+    environment:
+      IS_PERSISTENT: "TRUE"
+      PERSIST_DIRECTORY: /chroma/chroma
+
+volumes:
+  chroma_data:
