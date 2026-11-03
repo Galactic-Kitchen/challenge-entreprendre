@@ -210,8 +210,7 @@
 
           sources.forEach((source) => {
             const item = document.createElement('li');
-            const sourceText = source && source.text ? source.text : 'Source';
-            item.textContent = sourceText.length > 180 ? `${sourceText.slice(0, 180)}...` : sourceText;
+            item.textContent = JSON.stringify(source, null, 2);
             sourceBlock.querySelector('ul').appendChild(item);
           });
 
