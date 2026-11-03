@@ -1,105 +1,105 @@
 [submodule "projets_sources/requests"]
 	path = projets_sources/requests
 	url = https://github.com/psf/requests.git
-[submodule "src/projets/flask"]
-	path = src/projets/flask
+[submodule "projets_sources/flask"]
+	path = projets_sources/flask
 	url = https://github.com/pallets/flask.git
-[submodule "src/projets/guava"]
-	path = src/projets/guava
+[submodule "projets_sources/guava"]
+	path = projets_sources/guava
 	url = https://github.com/google/guava.git
-[submodule "src/projets/react"]
-	path = src/projets/react
+[submodule "projets_sources/react"]
+	path = projets_sources/react
 	url = https://github.com/facebook/react.git
-[submodule "src/projets/express"]
-	path = src/projets/express
+[submodule "projets_sources/express"]
+	path = projets_sources/express
 	url = https://github.com/expressjs/express.git
-[submodule "src/projets/curl"]
-	path = src/projets/curl
+[submodule "projets_sources/curl"]
+	path = projets_sources/curl
 	url = https://github.com/curl/curl.git
-[submodule "src/projets/json"]
-	path = src/projets/json
+[submodule "projets_sources/json"]
+	path = projets_sources/json
 	url = https://github.com/nlohmann/json.git
-[submodule "src/projets/hugo"]
-	path = src/projets/hugo
+[submodule "projets_sources/hugo"]
+	path = projets_sources/hugo
 	url = https://github.com/gohugoio/hugo.git
-[submodule "src/projets/tokio"]
-	path = src/projets/tokio
+[submodule "projets_sources/tokio"]
+	path = projets_sources/tokio
 	url = https://github.com/tokio-rs/tokio.git
-[submodule "src/projets/django"]
-	path = src/projets/django
+[submodule "projets_sources/django"]
+	path = projets_sources/django
 	url = https://github.com/django/django.git
-[submodule "src/projets/fastapi"]
-	path = src/projets/fastapi
+[submodule "projets_sources/fastapi"]
+	path = projets_sources/fastapi
 	url = https://github.com/fastapi/fastapi.git
-[submodule "src/projets/scikit-learn"]
-	path = src/projets/scikit-learn
+[submodule "projets_sources/scikit-learn"]
+	path = projets_sources/scikit-learn
 	url = https://github.com/scikit-learn/scikit-learn.git
-[submodule "src/projets/celery"]
-	path = src/projets/celery
+[submodule "projets_sources/celery"]
+	path = projets_sources/celery
 	url = https://github.com/celery/celery.git
-[submodule "src/projets/vue"]
-	path = src/projets/vue
+[submodule "projets_sources/vue"]
+	path = projets_sources/vue
 	url = https://github.com/vuejs/core.git
-[submodule "src/projets/nestjs"]
-	path = src/projets/nestjs
+[submodule "projets_sources/nestjs"]
+	path = projets_sources/nestjs
 	url = https://github.com/nestjs/nest.git
-[submodule "src/projets/axios"]
-	path = src/projets/axios
+[submodule "projets_sources/axios"]
+	path = projets_sources/axios
 	url = https://github.com/axios/axios.git
-[submodule "src/projets/tailwindcss"]
-	path = src/projets/tailwindcss
+[submodule "projets_sources/tailwindcss"]
+	path = projets_sources/tailwindcss
 	url = https://github.com/tailwindlabs/tailwindcss.git
-[submodule "src/projets/jackson-core"]
-	path = src/projets/jackson-core
+[submodule "projets_sources/jackson-core"]
+	path = projets_sources/jackson-core
 	url = https://github.com/FasterXML/jackson-core.git
-[submodule "src/projets/kafka"]
-	path = src/projets/kafka
+[submodule "projets_sources/kafka"]
+	path = projets_sources/kafka
 	url = https://github.com/apache/kafka.git
-[submodule "src/projets/okhttp"]
-	path = src/projets/okhttp
+[submodule "projets_sources/okhttp"]
+	path = projets_sources/okhttp
 	url = https://github.com/square/okhttp.git
-[submodule "src/projets/retrofit"]
-	path = src/projets/retrofit
+[submodule "projets_sources/retrofit"]
+	path = projets_sources/retrofit
 	url = https://github.com/square/retrofit.git
-[submodule "src/projets/opencv"]
-	path = src/projets/opencv
+[submodule "projets_sources/opencv"]
+	path = projets_sources/opencv
 	url = https://github.com/opencv/opencv.git
-[submodule "src/projets/sqlite"]
-	path = src/projets/sqlite
+[submodule "projets_sources/sqlite"]
+	path = projets_sources/sqlite
 	url = https://github.com/sqlite/sqlite.git
-[submodule "src/projets/ffmpeg"]
-	path = src/projets/ffmpeg
+[submodule "projets_sources/ffmpeg"]
+	path = projets_sources/ffmpeg
 	url = https://github.com/FFmpeg/FFmpeg.git
-[submodule "src/projets/redis"]
-	path = src/projets/redis
+[submodule "projets_sources/redis"]
+	path = projets_sources/redis
 	url = https://github.com/redis/redis.git
-[submodule "src/projets/docker-cli"]
-	path = src/projets/docker-cli
+[submodule "projets_sources/docker-cli"]
+	path = projets_sources/docker-cli
 	url = https://github.com/docker/cli.git
-[submodule "src/projets/kubernetes"]
-	path = src/projets/kubernetes
+[submodule "projets_sources/kubernetes"]
+	path = projets_sources/kubernetes
 	url = https://github.com/kubernetes/kubernetes.git
-[submodule "src/projets/gin"]
-	path = src/projets/gin
+[submodule "projets_sources/gin"]
+	path = projets_sources/gin
 	url = https://github.com/gin-gonic/gin.git
-[submodule "src/projets/prometheus"]
-	path = src/projets/prometheus
+[submodule "projets_sources/prometheus"]
+	path = projets_sources/prometheus
 	url = https://github.com/prometheus/prometheus.git
-[submodule "src/projets/serde"]
-	path = src/projets/serde
+[submodule "projets_sources/serde"]
+	path = projets_sources/serde
 	url = https://github.com/serde-rs/serde.git
-[submodule "src/projets/ripgrep"]
-	path = src/projets/ripgrep
+[submodule "projets_sources/ripgrep"]
+	path = projets_sources/ripgrep
 	url = https://github.com/BurntSushi/ripgrep.git
-[submodule "src/projets/actix-web"]
-	path = src/projets/actix-web
+[submodule "projets_sources/actix-web"]
+	path = projets_sources/actix-web
 	url = https://github.com/actix/actix-web.git
-[submodule "src/projets/laravel"]
-	path = src/projets/laravel
+[submodule "projets_sources/laravel"]
+	path = projets_sources/laravel
 	url = https://github.com/laravel/laravel.git
-[submodule "src/projets/rails"]
-	path = src/projets/rails
+[submodule "projets_sources/rails"]
+	path = projets_sources/rails
 	url = https://github.com/rails/rails.git
-[submodule "src/projets/automapper"]
-	path = src/projets/automapper
+[submodule "projets_sources/automapper"]
+	path = projets_sources/automapper
 	url = https://github.com/AutoMapper/AutoMapper.git
