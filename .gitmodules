@@ -1,0 +1,3 @@
+[submodule "projets_sources/requests"]
+	path = projets_sources/requests
+	url = https://github.com/psf/requests.git
