@@ -1,0 +1,105 @@
+[submodule "projets_sources/requests"]
+	path = projets_sources/requests
+	url = https://github.com/psf/requests.git
+[submodule "src/projets/flask"]
+	path = src/projets/flask
+	url = https://github.com/pallets/flask.git
+[submodule "src/projets/guava"]
+	path = src/projets/guava
+	url = https://github.com/google/guava.git
+[submodule "src/projets/react"]
+	path = src/projets/react
+	url = https://github.com/facebook/react.git
+[submodule "src/projets/express"]
+	path = src/projets/express
+	url = https://github.com/expressjs/express.git
+[submodule "src/projets/curl"]
+	path = src/projets/curl
+	url = https://github.com/curl/curl.git
+[submodule "src/projets/json"]
+	path = src/projets/json
+	url = https://github.com/nlohmann/json.git
+[submodule "src/projets/hugo"]
+	path = src/projets/hugo
+	url = https://github.com/gohugoio/hugo.git
+[submodule "src/projets/tokio"]
+	path = src/projets/tokio
+	url = https://github.com/tokio-rs/tokio.git
+[submodule "src/projets/django"]
+	path = src/projets/django
+	url = https://github.com/django/django.git
+[submodule "src/projets/fastapi"]
+	path = src/projets/fastapi
+	url = https://github.com/fastapi/fastapi.git
+[submodule "src/projets/scikit-learn"]
+	path = src/projets/scikit-learn
+	url = https://github.com/scikit-learn/scikit-learn.git
+[submodule "src/projets/celery"]
+	path = src/projets/celery
+	url = https://github.com/celery/celery.git
+[submodule "src/projets/vue"]
+	path = src/projets/vue
+	url = https://github.com/vuejs/core.git
+[submodule "src/projets/nestjs"]
+	path = src/projets/nestjs
+	url = https://github.com/nestjs/nest.git
+[submodule "src/projets/axios"]
+	path = src/projets/axios
+	url = https://github.com/axios/axios.git
+[submodule "src/projets/tailwindcss"]
+	path = src/projets/tailwindcss
+	url = https://github.com/tailwindlabs/tailwindcss.git
+[submodule "src/projets/jackson-core"]
+	path = src/projets/jackson-core
+	url = https://github.com/FasterXML/jackson-core.git
+[submodule "src/projets/kafka"]
+	path = src/projets/kafka
+	url = https://github.com/apache/kafka.git
+[submodule "src/projets/okhttp"]
+	path = src/projets/okhttp
+	url = https://github.com/square/okhttp.git
+[submodule "src/projets/retrofit"]
+	path = src/projets/retrofit
+	url = https://github.com/square/retrofit.git
+[submodule "src/projets/opencv"]
+	path = src/projets/opencv
+	url = https://github.com/opencv/opencv.git
+[submodule "src/projets/sqlite"]
+	path = src/projets/sqlite
+	url = https://github.com/sqlite/sqlite.git
+[submodule "src/projets/ffmpeg"]
+	path = src/projets/ffmpeg
+	url = https://github.com/FFmpeg/FFmpeg.git
+[submodule "src/projets/redis"]
+	path = src/projets/redis
+	url = https://github.com/redis/redis.git
+[submodule "src/projets/docker-cli"]
+	path = src/projets/docker-cli
+	url = https://github.com/docker/cli.git
+[submodule "src/projets/kubernetes"]
+	path = src/projets/kubernetes
+	url = https://github.com/kubernetes/kubernetes.git
+[submodule "src/projets/gin"]
+	path = src/projets/gin
+	url = https://github.com/gin-gonic/gin.git
+[submodule "src/projets/prometheus"]
+	path = src/projets/prometheus
+	url = https://github.com/prometheus/prometheus.git
+[submodule "src/projets/serde"]
+	path = src/projets/serde
+	url = https://github.com/serde-rs/serde.git
+[submodule "src/projets/ripgrep"]
+	path = src/projets/ripgrep
+	url = https://github.com/BurntSushi/ripgrep.git
+[submodule "src/projets/actix-web"]
+	path = src/projets/actix-web
+	url = https://github.com/actix/actix-web.git
+[submodule "src/projets/laravel"]
+	path = src/projets/laravel
+	url = https://github.com/laravel/laravel.git
+[submodule "src/projets/rails"]
+	path = src/projets/rails
+	url = https://github.com/rails/rails.git
+[submodule "src/projets/automapper"]
+	path = src/projets/automapper
+	url = https://github.com/AutoMapper/AutoMapper.git
