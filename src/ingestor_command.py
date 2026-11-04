@@ -1,9 +1,12 @@
+import logging
 import os
 from pathlib import Path
 from typing import Any, Iterator
-from ingestion import initialiser_et_rempli_chromadb
 
 from config import Config
+from ingestion import initialiser_et_rempli_chromadb
+
+logger = logging.getLogger(__name__)
 
 PROJECTS_DIR = Path(__file__).resolve().parent.parent / "projets_sources"
 
@@ -18,6 +21,7 @@ def iter_project_files() -> Iterator[Path]:
     extension is in EXTENSIONS_TO_CHECK.
     """
     for root, dirs, files in os.walk(PROJECTS_DIR):
+        dirs[:] = [d for d in dirs if d != ".git"]
         current_dir = Path(root)
         depth = len(current_dir.relative_to(PROJECTS_DIR).parts)
 
@@ -36,6 +40,7 @@ def iter_project_files() -> Iterator[Path]:
 
 
 if __name__ == "__main__":
+    logger.info("Démarrage de l'ingestion")
     projets: list[dict[str, Any]] = []
     for file_path in iter_project_files():
         relative_path = file_path.relative_to(PROJECTS_DIR)
@@ -54,6 +59,10 @@ if __name__ == "__main__":
                 "contenu": contenu,
             }
         )
+
+    logger.info("Parcours fini, fichiers trouvés : %d", len(projets))
+
+    
 
     initialiser_et_rempli_chromadb(projets)
 
